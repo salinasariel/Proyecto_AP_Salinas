@@ -1,0 +1,16 @@
+.cont{
+    background-image: url(../../../assets/img/banner_fondo.jpg);
+    text-align: center;
+    padding: 150px;
+    color: #ffffff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#nombre{
+    font-size: 10em;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+#rango{
+    font-size: 80px;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+}

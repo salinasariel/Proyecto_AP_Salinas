@@ -1,0 +1,15 @@
+.text{
+    text-align: center;
+    background-color: #77BDDF;
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: 15px;
+}
+#boton{
+    background-color: #2e9dd4d1;
+    border-radius: 10px;
+    border: none;
+}
+#boton:hover{
+    background-color: #2e9dd434;
+}
