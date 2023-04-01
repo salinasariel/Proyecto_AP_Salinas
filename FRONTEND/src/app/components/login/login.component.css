@@ -6,7 +6,7 @@
     text-align: center;
     
 }
-.completar{
+#completar{
     border-radius: 10px;
     border: none;
     background-color: #2e9dd4d1;
@@ -15,7 +15,7 @@
     height: 30px;
     padding-left: 12px;
 }
-.completar:hover{
+#completar:hover{
     background-color: #5fbbe9d1;
 }
 #boton2{
