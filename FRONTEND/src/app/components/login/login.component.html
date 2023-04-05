@@ -1,33 +1,15 @@
-<div id="mostrar" class="container">
-    
-    <div class="row">
-
-        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-            <h1>Identificación</h1>
-            <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
-                <div>
-                    <input class="completar" id="nombreUsuario" name="nombreUsuario" placeholder="Usuario" type="text" [(ngModel)]="nombreUsuario" required>
-                    <label for="nombreUsuario">Usuario</label>
-                    
-                </div>
-                <div>
-                    <input class="completar" id="password" placeholder="Contraseña" type="password" [(ngModel)]="password" required>
-                    <label for="password">Password</label>
-                </div>
-                <button type="submit" id="boton2">Login</button>
-            </form>
+<div class="login-page">
+    <div class="form">
+      <form #f="ngForm" (ngSubmit)="onLogin()" class="login-form">
+        <div>
+            <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="username" [(ngModel)]="nombreUsuario" required />
+            <label for="nombreUsuario"></label>
         </div>
-        <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <span>
-                <a href="" id="nosoy">No soy administrador.</a>
-            </span>
+        <div>
+            <input type="password" id="password" name="password" placeholder="password" [(ngModel)]="password" required />
+            <label for="password"></label>
         </div>
-        <div id="relleno">
-
-        </div>
-        <div id="relleno">
-            
-        </div>
+        <button>login</button>
+      </form>
     </div>
-</div>
+  </div>
