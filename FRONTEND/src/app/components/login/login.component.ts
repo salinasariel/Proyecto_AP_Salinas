@@ -40,13 +40,29 @@ export class LoginComponent implements OnInit {
           this.tokenService.setUsername(data.nombreUsuario);
           this.tokenService.setAuthorities(data.authorities);
           this.roles = data.authorities;
-          this.router.navigate([''])
+          const usuarioNotValid:HTMLElement = document.getElementById("cartelConcedido") as HTMLElement;
+          setTimeout(() => {
+            usuarioNotValid.style.display = "block";
+          },100);
+          setTimeout(()=>{
+            usuarioNotValid.style.display = "none";
+          },1500);
+          
+          setTimeout(()=>{
+            this.router.navigate([''])
+          },1500);
         }, err =>{
+          const usuarioNotValid:HTMLElement = document.getElementById("cartelError") as HTMLElement;
+          setTimeout(() => {
+            usuarioNotValid.style.display = "block";
+          },100);
+          setTimeout(()=>{
+            usuarioNotValid.style.display = "none";
+          },8000);
           this.isLogged = false;
           this.isLogginFail = true;
           this.errMsj = err.error.mensaje;
           console.log(this.errMsj);
-          
         })
   }
 }

@@ -28,7 +28,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #4CAF50;
+    background: #4c82af;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -39,7 +39,7 @@
     cursor: pointer;
   }
   .form button:hover,.form button:active,.form button:focus {
-    background: #43A047;
+    background: #4c82afc6;
   }
   .form .message {
     margin: 15px 0 0;
@@ -94,3 +94,25 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
   }
+
+  #cartelError{
+
+    background-color: rgba(255, 0, 0, 0.737);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: none;
+
+  }
+  #cartelConcedido{
+
+    background-color: rgba(21, 255, 0, 0.737);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: none;
+
+  }
+
+  .scale-up-center{animation:scale-up-center 0.4s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
+ 

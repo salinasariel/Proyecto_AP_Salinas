@@ -1,15 +1,20 @@
 <div class="login-page">
     <div class="form">
+      <h3>Login</h3><br>
       <form #f="ngForm" (ngSubmit)="onLogin()" class="login-form">
         <div>
-            <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="username" [(ngModel)]="nombreUsuario" required />
+            <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Usuario" [(ngModel)]="nombreUsuario" required />
             <label for="nombreUsuario"></label>
         </div>
         <div>
-            <input type="password" id="password" name="password" placeholder="password" [(ngModel)]="password" required />
+            <input type="password" id="password" name="password" placeholder="Contraseña" [(ngModel)]="password" required />
             <label for="password"></label>
         </div>
-        <button>login</button>
+        <button >login</button>
       </form>
+      <div class="scale-up-center "  id="cartelError"><b>Usuario no valido.</b></div>
+      <div class="scale-up-center "  id="cartelConcedido"><b>Redireccionando.</b></div>
+      <a id="nosoy" href="../">No soy administrador.</a>
+
     </div>
   </div>

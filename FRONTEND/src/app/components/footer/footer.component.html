@@ -1,4 +1,5 @@
 <div class="text">
     <p>Ariel Salinas | Argentina Programa 2023</p>
-    <a href="/login" id="redireccion">Admin Login</a>
+    <a *ngIf="!isLogged" href="/login" id="redireccion">Admin Login</a>
+    <button id="cerrarSesion" *ngIf="isLogged" (click)="onLogOut()">Cerrar sesion.</button>
 </div>
