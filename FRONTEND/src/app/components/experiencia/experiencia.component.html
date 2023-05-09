@@ -7,17 +7,27 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem tempora neque veniam perspiciatis doloribus cum quae animi, explicabo soluta dolorem quod ad omnis, rerum ex distinctio itaque veritatis asperiores dolore.</p>
             </span>
         </div>
-        <div id="tra">
-            <h3>Trabajos Freelance</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus repellendus quasi voluptatem beatae tenetur molestiae totam sint quisquam et nisi obcaecati veniam dignissimos, quia quibusdam ut, nesciunt aut quidem assumenda.</p>
+        <div class="col-lg-2">
+            <button class="btn btn-secondary" type="button" routerLink="/nuevaexp" *ngIf="isLogged">Agregar</button>
         </div>
-        <div id="tra">
-            <h3>Trabajos Freelance</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ipsum repudiandae hic dolorem, neque a praesentium, corporis totam deleniti perspiciatis quae? Quos, dicta a architecto nulla praesentium cumque. Unde, suscipit.</p>
-            
-        </div>
-        <div>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Experiencia of expe">
+                    <td>
+                        <h2>{{Experiencia.nombreE}}</h2>
+                    </td>
+                    <td>{{Experiencia.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
+                            <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                            <i class="bi bi-trash-fill"></i> BORRAR</button>
+                    </td>
+                </tr>
+            </tbody>
 
-        </div>
+        </table>
     </div>
 </div>

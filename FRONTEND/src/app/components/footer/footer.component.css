@@ -15,7 +15,7 @@
 }
 #cerrarSesion:hover{
     background-color: #ff5b5b;
-    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.377);
+    box-shadow: 0px 0px 3px 1px #ff5b5bc5;
 }
 #redireccion{
     text-decoration: none;
@@ -27,5 +27,5 @@
 }
 #redireccion:hover{
     background-color: #2e9dd4;
-    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.377);
+    box-shadow: 0px 0px 3px 1px #2e9dd4c3;
 }
