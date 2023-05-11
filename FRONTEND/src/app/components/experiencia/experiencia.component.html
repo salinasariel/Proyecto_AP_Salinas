@@ -1,33 +1,21 @@
 <div class="container">
     <div class="row">
-
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <span>
                 <h1>Experiencia</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem tempora neque veniam perspiciatis doloribus cum quae animi, explicabo soluta dolorem quod ad omnis, rerum ex distinctio itaque veritatis asperiores dolore.</p>
             </span>
         </div>
         <div class="col-lg-2">
-            <button class="btn btn-secondary" type="button" routerLink="/nuevaexp" *ngIf="isLogged">Agregar</button>
+            <button *ngIf="isLogged" class="btn btn-secondary" type="button" routerLink="/nuevaexp" >Agregar</button>
         </div>
-        <table class="table">
-            <tbody>
-                <tr *ngFor="let Experiencia of expe">
-                    <td>
-                        <h2>{{Experiencia.nombreE}}</h2>
-                    </td>
-                    <td>{{Experiencia.descripcionE}}</td>
-                    <td *ngIf="isLogged">
-                        <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
-                            <i class="bi bi-pencil-fill"></i> EDITAR</button>
-                    </td>
-                    <td *ngIf="isLogged">
-                        <button class="btn btn-danger" (click)="delete(Experiencia.id)">
-                            <i class="bi bi-trash-fill"></i> BORRAR</button>
-                    </td>
-                </tr>
-            </tbody>
-
-        </table>
-    </div>
+        <div>
+            <div id="tra" *ngFor="let Experiencia of expe | async">
+                <h2>{{Experiencia.nombreE}}</h2>
+                <p>{{Experiencia.descripcionE}}</p>
+                <button *ngIf="isLogged" class="but btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
+                    <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                <button *ngIf="isLogged" class="but btn btn-danger" (click)="delete(Experiencia.id)">
+                    <i class="bi bi-trash-fill"></i> BORRAR</button>
+            </div>
+        </div>
 </div>

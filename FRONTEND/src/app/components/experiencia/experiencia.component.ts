@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Experiencia } from 'src/app/model/experiencia';
 import { SExperienciaService } from 'src/app/service/s-experiencia.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -10,14 +11,15 @@ import { TokenService } from 'src/app/service/token.service';
 })
 
 export class ExperienciaComponent implements OnInit{
-  expe: Experiencia[] = [];
-
-  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
-
+  expe: Observable<Experiencia[]>;
   isLogged = false;
 
+  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) {
+    this.expe = this.sExperiencia.lista();
+   }
+
+
   ngOnInit(): void {
-    this.cargarExperiencia();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
@@ -26,7 +28,7 @@ export class ExperienciaComponent implements OnInit{
   }
 
   cargarExperiencia(): void {
-    this.sExperiencia.lista().subscribe(data => { this.expe = data; })
+    this.expe = this.sExperiencia.lista();
   }
 
   delete(id?: number){
