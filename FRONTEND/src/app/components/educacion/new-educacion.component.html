@@ -2,14 +2,14 @@
     <div class="row">
         <div class="recuadro">
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <h1>Agregar nueva experiencia</h1>
+                <h1>Agregar nueva educación.</h1>
                 <div class="form-group">
-                    <label for="nombreE">Nombre de la empresa</label>
+                    <label for="nombreE">Nombre de la institución.</label>
                     <input type="text" class="form-control" id="nombreE" name="nombreE" [(ngModel)]="nombreE" required>
                 </div>
                 <div class="form-group">
-                    <label for="descripcionE">Descripcion del trabajo</label>
-                    <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="descripcionE" required="">
+                    <label for="descripcionE">Certificación.</label>
+                    <input type="text" class="form-control" id="descripcionE" name="descripcionE" [(ngModel)]="descripcionE" required>
                 </div>
                 <button style="margin-top: 20px;" class="btn btn-success">Guardar</button>
                 <button (click)="onCancel()" style="margin-top: 20px; margin-left: 10px;" class="btn btn-danger">Cancelar</button>
