@@ -9,7 +9,7 @@
             <button *ngIf="isLogged" class="btn btn-secondary" type="button" routerLink="/nuevaexp" >Agregar</button>
         </div>
         <div>
-            <div id="tra" *ngFor="let Experiencia of expe | async">
+            <div id="tra" *ngFor="let Experiencia of expe">
                 <h2>{{Experiencia.nombreE}}</h2>
                 <p>{{Experiencia.descripcionE}}</p>
                 <button *ngIf="isLogged" class="but btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
