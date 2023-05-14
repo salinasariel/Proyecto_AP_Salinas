@@ -8,7 +8,7 @@
         <div class="col-lg-2">
             <button *ngIf="isLogged" class="btn btn-secondary" type="button" routerLink="/newskill" >Agregar</button>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4" *ngFor="let skill of skill">
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let skill of skill">
             <circle-progress
                 [percent]="(skill.porcentaje)" 
                 [radius]="90" 
@@ -30,7 +30,7 @@
             ></circle-progress>
 
             <td *ngIf="isLogged">
-                <button class="but btn btn-danger" (click)="delete(skill.id)" >Borrar</button>
+                <button  class="center but btn btn-danger" (click)="delete(skill.id)" >Borrar</button>
             </td>
             
         </div>

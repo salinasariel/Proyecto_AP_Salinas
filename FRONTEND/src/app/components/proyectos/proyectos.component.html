@@ -1,22 +1,21 @@
 <div class="container">
     <div class="row">
-
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <span>
                 <h1>Proyectos</h1>
             </span>
         </div>
-        <div id="tra">
-            <h3>Sistema de control de stock en Python</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus repellendus quasi voluptatem beatae tenetur molestiae totam sint quisquam et nisi obcaecati veniam dignissimos, quia quibusdam ut, nesciunt aut quidem assumenda.</p>
-        </div>
-        <div id="tra">
-            <h3>Cotizador Online con JavaScript</h3>
-            <p>Curso se programar aprobado.</p>
-            
+        <div class="col-lg-2">
+            <button *ngIf="isLogged" class="btn btn-secondary" type="button" routerLink="/nuevoproyec" >Agregar</button>
         </div>
         <div>
-
+            <div id="tra" *ngFor="let Proyectos of proyectos">
+                <h2>{{Proyectos.nombreE}}</h2>
+                <p>{{Proyectos.descripcionE}}</p>
+                <button *ngIf="isLogged" class="but btn btn-light" routerLink="/editproyec/{{Proyectos.id}}">
+                    <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                <button *ngIf="isLogged" class="but btn btn-danger" (click)="delete(Proyectos.id)">
+                    <i class="bi bi-trash-fill"></i> BORRAR</button>
+            </div>
         </div>
-    </div>
 </div>
