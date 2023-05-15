@@ -9,6 +9,7 @@ import { EditExperienciaComponent } from './components/experiencia/edit-experien
 import { NewSkillComponent } from './components/hys/new-skill.component';
 import { NewProyectosComponent } from './components/proyectos/new-proyectos.component';
 import { EditProyectosComponent } from './components/proyectos/edit-proyectos.component';
+import { EditAboutmeComponent } from './components/aboutme/edit-aboutme.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'nuevaedu', component: NeweducacionComponent},
   {path: 'editedu/:id', component: EditeducacionComponent},
   {path: 'editexp/:id', component: EditExperienciaComponent},
+  {path: 'editacercade/:id', component: EditAboutmeComponent},
   {path: 'editproyec/:id', component: EditProyectosComponent},
   {path: 'newskill', component: NewSkillComponent}
 ];
