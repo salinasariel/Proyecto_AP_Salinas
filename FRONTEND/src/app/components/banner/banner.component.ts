@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-banner',
@@ -11,17 +12,27 @@ import { PersonaService } from 'src/app/service/persona.service';
 
 
 export class BannerComponent implements OnInit {
-  personas$:Observable<persona[]> = of([]);
-  tito:persona|null = null;
+  persona: persona = null!;
 
-  constructor(public personaService: PersonaService){
-
-  }
+  constructor(public personaService: PersonaService,
+    private tokenService: TokenService){}
   
+  isLogged = false;
+
   ngOnInit(): void{
-    this.personas$ = this.personaService.getPersona() as Observable<persona[]>;
-    this.personas$.subscribe(response => {
-      this.tito = response[0];
-    })    
+    // this.personaService.getPersona().subscribe(data => {this.persona = data})
+
+    this.cargarPersona();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  cargarPersona(){
+    this.personaService.detail(1).subscribe(data =>
+      {this.persona = data}
+    )
   }
 }
